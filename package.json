@@ -1,0 +1,10 @@
+{
+  "name": "wavenly",
+  "private": true,
+  "type": "module",
+  "description": "Wavenly marketing site. Static pages plus two Cloudflare Pages Functions. No dependencies, no build step, no database.",
+  "scripts": {
+    "dev": "npx wrangler pages dev . --compatibility-date=2024-11-01",
+    "deploy": "npx wrangler pages deploy ."
+  }
+}

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Reply — Wavenly Studio</title>
+  <link rel="icon" type="image/png" href="public/images/wavenly-icon.png">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=10">
+  <style>
+    /* Page-specific only; everything else comes from the site stylesheet. */
+    body { background: var(--ink); color: var(--on-ink); }
+    /* The shared .label colour targets light grounds; this page is ink. */
+    .studio .label { color: var(--on-ink-3); }
+    .studio { max-width: 880px; margin-inline: auto; padding: clamp(28px, 5vw, 72px) var(--gutter) 96px; }
+    .studio-head { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-bottom: 40px; }
+    .studio-head .wordmark-text { color: var(--on-ink); }
+
+    .card { border: var(--rule) solid var(--ink-line); padding: clamp(20px, 3vw, 32px); margin-bottom: 28px; }
+    .card > .label { margin-bottom: 18px; }
+
+    .detail { display: grid; grid-template-columns: minmax(0, 170px) minmax(0, 1fr); gap: 0 24px; }
+    .detail dt { padding: 13px 0; border-top: var(--rule) solid var(--ink-line); font: 500 .70rem/1.4 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--on-ink-3); }
+    .detail dd { padding: 13px 0; border-top: var(--rule) solid var(--ink-line); margin: 0; font-size: .95rem; line-height: 1.55; color: var(--on-ink-2); white-space: pre-wrap; }
+    .detail dd a { color: var(--on-ink); border-bottom: var(--rule) solid var(--on-ink-4); }
+
+    .templates { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+    .templates button { padding: 9px 13px; background: none; border: var(--rule) solid var(--ink-line); color: var(--on-ink-2); font: 500 .8rem var(--sans); cursor: pointer; transition: color var(--t-base) var(--ease), border-color var(--t-base) var(--ease); }
+    .templates button:hover { color: var(--on-ink); border-color: var(--on-ink-3); }
+
+    .studio-note { margin-top: 26px; font-size: .85rem; line-height: 1.6; color: var(--on-ink-3); }
+    .studio-note code { font: 400 .82rem var(--mono); color: var(--on-ink-2); }
+    .bad { border-color: #FF9A8A; }
+    .bad .label { color: #FF9A8A; }
+  </style>
+</head>
+<body>
+  <main class="studio">
+    <header class="studio-head">
+      <a class="wordmark" href="/">
+        <img class="wordmark-mark" src="public/images/wavenly-mark.png" alt="" width="284" height="128">
+        <span class="wordmark-text">Wavenly</span>
+      </a>
+      <p class="label">Reply composer</p>
+    </header>
+
+    <div id="invalid" class="card bad" hidden>
+      <p class="label">Link not usable</p>
+      <p id="invalid-why">This reply link is missing its signed details.</p>
+      <p class="studio-note">
+        Open the <strong>Reply to this inquiry</strong> button from the inquiry
+        email. Links expire after 60 days.
+      </p>
+    </div>
+
+    <section id="composer" hidden>
+      <div class="card">
+        <p class="label">The inquiry</p>
+        <dl class="detail">
+          <dt>Name</dt><dd id="d-name"></dd>
+          <dt>Email</dt><dd id="d-email"></dd>
+          <dt>Trade</dt><dd id="d-trade"></dd>
+          <dt>Business &amp; site</dt><dd id="d-details"></dd>
+          <dt>Received</dt><dd id="d-at"></dd>
+        </dl>
+      </div>
+
+      <form id="reply-form" class="card" novalidate>
+        <p class="label">Your reply</p>
+
+        <div class="templates" id="templates">
+          <button type="button" data-tpl="review">Review ready</button>
+          <button type="button" data-tpl="questions">Need a few answers</button>
+          <button type="button" data-tpl="quote">Quote &amp; next step</button>
+          <button type="button" data-tpl="pass">Honest pass</button>
+        </div>
+
+        <div class="field">
+          <label for="f-subject">Subject</label>
+          <input id="f-subject" name="subject" type="text" value="About your free website review">
+        </div>
+
+        <div class="field">
+          <label for="f-body">Message</label>
+          <textarea id="f-body" name="body" rows="12"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="f-from">Sign off as</label>
+          <input id="f-from" name="fromName" type="text" value="Mark — Wavenly">
+        </div>
+
+        <div class="field">
+          <label for="f-pass">Studio passcode</label>
+          <input id="f-pass" name="passcode" type="password" autocomplete="current-password">
+          <p class="field-hint">Checked on the server. Remembered on this device only.</p>
+        </div>
+
+        <button class="btn btn-accent btn-block" type="submit">Send reply</button>
+        <p class="form-status" id="status" role="status" aria-live="polite"></p>
+      </form>
+
+      <p class="studio-note">
+        Nothing is stored. The client's details live in this link's signature,
+        and your reply is BCC'd to the Wavenly inbox so the thread stays there.
+      </p>
+    </section>
+  </main>
+
+  <script>
+  (() => {
+    'use strict';
+    const $ = (s) => document.querySelector(s);
+
+    const params = new URLSearchParams(location.search);
+    const d = params.get('d');
+    const s = params.get('s');
+
+    const fail = (why) => {
+      $('#invalid').hidden = false;
+      if (why) $('#invalid-why').textContent = why;
+    };
+
+    // Decoded here only to render the summary. The server re-verifies the
+    // signature before sending, and takes the recipient from it — so editing
+    // this in the URL changes what you see and nothing that matters.
+    const decode = (b64) => {
+      try {
+        const pad = b64.replace(/-/g, '+').replace(/_/g, '/') + '==='.slice((b64.length + 3) % 4);
+        const bin = atob(pad);
+        const bytes = Uint8Array.from(bin, (c) => c.charCodeAt(0));
+        return JSON.parse(new TextDecoder().decode(bytes));
+      } catch { return null; }
+    };
+
+    if (!d || !s) { fail(); return; }
+    const inq = decode(d);
+    if (!inq || !inq.e) { fail('This link could not be read.'); return; }
+
+    $('#composer').hidden = false;
+    $('#d-name').textContent = inq.n || '—';
+    $('#d-email').innerHTML = '<a href="mailto:' + encodeURIComponent(inq.e) + '"></a>';
+    $('#d-email').querySelector('a').textContent = inq.e;
+    $('#d-trade').textContent = inq.t || 'Not given';
+    $('#d-details').textContent = inq.d || '—';
+    $('#d-at').textContent = inq.at ? new Date(inq.at).toLocaleString() : '—';
+
+    const first = (inq.n || '').trim().split(/\s+/)[0] || 'there';
+    const TEMPLATES = {
+      review: `Thanks for sending this over.\n\nI went through ${inq.d ? inq.d.split('\n')[0] : 'your site'} and wrote up what I'd change and why. The short version:\n\n1. \n2. \n3. \n\nHappy to walk you through it — no obligation either way.`,
+      questions: `Thanks for getting in touch.\n\nBefore I put the review together, a couple of quick things:\n\n1. Which jobs are worth the most to you right now?\n2. Where do most of your enquiries come from today?\n3. Anything on the current site you want kept?\n\nOnce I have those I'll send the review over.`,
+      quote: `Thanks for your patience.\n\nBased on the review, here's what I'd build and what it costs:\n\nScope:\n- \n- \n\nSetup: $\nMonthly management: $\n\nYou'd see the finished site before paying to launch it. If it isn't right, you walk.`,
+      pass: `Thanks for reaching out, and for the detail.\n\nBeing straight with you: I don't think you need us right now. Here's what I'd do instead:\n\n- \n\nIf that changes, you know where I am.`,
+    };
+
+    $('#templates').addEventListener('click', (e) => {
+      const btn = e.target.closest('[data-tpl]');
+      if (!btn) return;
+      $('#f-body').value = `Hi ${first},\n\n` + TEMPLATES[btn.dataset.tpl];
+      $('#f-body').focus();
+    });
+
+    // Convenience only — the passcode is verified server-side every time.
+    try {
+      const saved = localStorage.getItem('wavenly-studio-pass');
+      if (saved) $('#f-pass').value = saved;
+    } catch {}
+
+    $('#reply-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const status = $('#status');
+      const btn = e.currentTarget.querySelector('button[type=submit]');
+      const body = $('#f-body').value.trim();
+
+      if (body.length < 10) {
+        status.textContent = 'Write the message first.';
+        status.removeAttribute('data-state');
+        return;
+      }
+
+      btn.disabled = true;
+      status.removeAttribute('data-state');
+      status.textContent = 'Sending…';
+
+      try {
+        const res = await fetch('/api/reply', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            d, s,
+            subject: $('#f-subject').value,
+            body,
+            fromName: $('#f-from').value,
+            passcode: $('#f-pass').value,
+          }),
+        });
+        const out = await res.json().catch(() => ({}));
+
+        if (res.ok && out.ok) {
+          try { localStorage.setItem('wavenly-studio-pass', $('#f-pass').value); } catch {}
+          status.textContent = `Sent to ${out.to}. A copy is in the Wavenly inbox.`;
+          status.setAttribute('data-state', 'ok');
+          btn.textContent = 'Sent';
+          return;
+        }
+        status.textContent = out.error || 'That did not send. Try again.';
+      } catch {
+        status.textContent = 'No connection to the server.';
+      }
+      btn.disabled = false;
+    });
+  })();
+  </script>
+</body>
+</html>

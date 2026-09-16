@@ -1,0 +1,3 @@
+# Pages serves /studio for studio.html automatically; this keeps the .html
+# form from becoming a second indexable URL.
+/studio.html  /studio  301

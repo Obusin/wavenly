@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Wavenly designs, launches, and manages websites for service businesses — built so inquiries arrive, get answered, and keep coming after launch.">
+  <meta name="theme-color" content="#0F1311">
+  <title>Wavenly — Websites built to bring in work</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Instrument+Serif:ital@1&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="public/images/wavenly-icon.png">
+  <link rel="apple-touch-icon" href="public/images/wavenly-icon.png">
+  <link rel="stylesheet" href="styles.css?v=10">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="masthead">
+    <div class="masthead-inner">
+      <a class="wordmark" href="#top">
+        <img class="wordmark-mark" src="public/images/wavenly-mark.png"
+             alt="" width="284" height="128" decoding="async">
+        <span class="wordmark-text">Wavenly</span>
+      </a>
+
+      <div class="masthead-end">
+        <a class="btn btn-accent btn-sm" href="#review">
+          <span class="cta-long">Free website review</span>
+          <span class="cta-short">Free review</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-drawer" aria-label="Open menu">
+          <svg class="nav-glyph" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path class="glyph-bar glyph-bar-1" d="M0 4.5h24"/>
+            <path class="glyph-bar glyph-bar-2" d="M0 12h24"/>
+            <path class="glyph-bar glyph-bar-3" d="M0 19.5h24"/>
+            <path class="glyph-cross glyph-cross-1" d="M2.101 2.101l19.798 19.798"/>
+            <path class="glyph-cross glyph-cross-2" d="M2.101 21.899l19.798-19.798"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="drawer" id="site-drawer">
+      <div class="grid drawer-grid">
+        <nav class="drawer-nav" aria-label="Primary">
+          <ul class="drawer-list">
+            <li style="--i: 0"><a href="#path"><span class="word">The inquiry path</span></a></li>
+            <li style="--i: 1"><a href="#process"><span class="word">Process</span></a></li>
+            <li style="--i: 2"><a href="#work"><span class="word">Work</span></a></li>
+            <li style="--i: 3"><a href="#pricing"><span class="word">Pricing</span></a></li>
+            <li style="--i: 4"><a href="#care"><span class="word">Care</span></a></li>
+            <li style="--i: 5"><a href="#faq"><span class="word">Questions</span></a></li>
+          </ul>
+        </nav>
+
+        <div class="drawer-meta">
+          <div class="drawer-meta-block" style="--i: 3">
+            <p class="label">Start here</p>
+            <a class="drawer-cta" href="#review">Get your free website review</a>
+          </div>
+          <div class="drawer-meta-block" style="--i: 4">
+            <p class="label">Contact</p>
+            <a href="mailto:hello.wavenly@gmail.com">hello.wavenly@gmail.com</a>
+            <p>Las Vegas, Nevada</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ── Hero ─────────────────────────────────────────────── -->
+    <section id="top" class="hero">
+      <div class="grid hero-grid">
+        <div class="hero-lede">
+          <p class="label">Wavenly — Las Vegas, and wherever the work is</p>
+          <h1 class="display">
+            Most service businesses don't have a traffic problem.
+            <em>They have a leak.</em>
+          </h1>
+          <p class="lede" data-reveal>
+            Someone needs your service, finds your website, and <mark class="hl">still doesn't call</mark>.
+            Wavenly designs, builds, and manages the website that closes that gap —
+            then keeps it working long after launch.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-accent" href="#review">Get your free website review</a>
+            <a class="btn btn-ghost" href="#path">See where inquiries leak</a>
+          </div>
+          <p class="hero-fineprint">
+            Starter setup <strong>$800</strong> + <strong>$75/mo</strong> management ·
+            You preview the finished site before you pay to launch it.
+          </p>
+        </div>
+
+        <aside class="hero-index" aria-labelledby="hero-index-title">
+          <h2 id="hero-index-title" class="label">Every inquiry travels five stages</h2>
+          <ol class="hero-index-list">
+            <li><span class="idx">01</span><span>Found</span></li>
+            <li><span class="idx">02</span><span>Convinced</span></li>
+            <li><span class="idx">03</span><span>Asked</span></li>
+            <li><span class="idx">04</span><span>Answered</span></li>
+            <li><span class="idx">05</span><span>Kept</span></li>
+          </ol>
+          <p class="hero-index-note">
+            A website is only as good as its weakest stage. We build all five.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ── Marquee band ─────────────────────────────────────── -->
+    <section class="marquee" aria-label="Built for you">
+      <div data-text-loop
+           data-text="Built for you"
+           data-shape="wave"
+           data-speed="26"
+           data-direction="forward"
+           data-separator="—"
+           data-curviness="20"
+           data-font-size="44"
+           data-font-weight="600"
+           data-letter-spacing="-1"
+           data-uppercase="true"
+           data-color="#EDEAE3"
+           data-ribbon="true"
+           data-ribbon-color="#0040C0"
+           data-ribbon-width="98"
+           data-pause-on-hover="true"></div>
+    </section>
+
+    <!-- ── Premise ──────────────────────────────────────────── -->
+    <section class="premise" aria-labelledby="premise-title">
+      <div class="grid">
+        <p class="label col-rail">Premise</p>
+        <div class="premise-body">
+          <h2 id="premise-title" class="statement">
+            A website is not a brochure. It's the part of your business that
+            <em>answers the phone</em> when you're on a roof.
+          </h2>
+          <div class="premise-points">
+            <article>
+              <h3>Nobody finds it</h3>
+              <p data-reveal>The site exists, but it <mark class="hl">doesn't turn up when someone searches</mark> for the work you actually do.</p>
+            </article>
+            <article>
+              <h3>Nobody trusts it</h3>
+              <p data-reveal>It loads, it looks fine, and it still gives <mark class="hl">no reason to pick you</mark> over the next three results.</p>
+            </article>
+            <article>
+              <h3>Nobody answers</h3>
+              <p data-reveal>The form works. The message lands in an inbox nobody opens until Friday. <mark class="hl">The job is already gone</mark>.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── The inquiry path (explorer) ───────────────────────── -->
+    <section id="path" class="path" aria-labelledby="path-title">
+      <div class="grid">
+        <header class="section-head">
+          <p class="label">01 — What we build</p>
+          <h2 id="path-title" class="display-sm">The inquiry path.</h2>
+          <p class="section-aside" data-reveal>
+            Pick a stage to see what usually breaks there, what we build, and what
+            changes once it works.
+          </p>
+        </header>
+      </div>
+
+      <div class="grid">
+        <div class="path-explorer">
+          <div class="path-track" role="tablist" aria-label="Stages of an inquiry">
+            <button id="stage-tab-found" class="stage" type="button" role="tab" aria-selected="true" aria-controls="stage-panel-found" tabindex="0">
+              <span class="stage-dot" aria-hidden="true"></span>
+              <span class="idx">01</span>
+              <span class="stage-name">Found</span>
+            </button>
+            <button id="stage-tab-convinced" class="stage" type="button" role="tab" aria-selected="false" aria-controls="stage-panel-convinced" tabindex="-1">
+              <span class="stage-dot" aria-hidden="true"></span>
+              <span class="idx">02</span>
+              <span class="stage-name">Convinced</span>
+            </button>
+            <button id="stage-tab-asked" class="stage" type="button" role="tab" aria-selected="false" aria-controls="stage-panel-asked" tabindex="-1">
+              <span class="stage-dot" aria-hidden="true"></span>
+              <span class="idx">03</span>
+              <span class="stage-name">Asked</span>
+            </button>
+            <button id="stage-tab-answered" class="stage" type="button" role="tab" aria-selected="false" aria-controls="stage-panel-answered" tabindex="-1">
+              <span class="stage-dot" aria-hidden="true"></span>
+              <span class="idx">04</span>
+              <span class="stage-name">Answered</span>
+            </button>
+            <button id="stage-tab-kept" class="stage" type="button" role="tab" aria-selected="false" aria-controls="stage-panel-kept" tabindex="-1">
+              <span class="stage-dot" aria-hidden="true"></span>
+              <span class="idx">05</span>
+              <span class="stage-name">Kept</span>
+            </button>
+          </div>
+
+          <div class="path-panels">
+            <article id="stage-panel-found" class="panel" role="tabpanel" tabindex="0" aria-labelledby="stage-tab-found">
+              <div class="panel-lede">
+                <p class="label">Stage 01 — Found</p>
+                <h3>Turn up when someone is already looking.</h3>
+                <p>Search fundamentals are built into the work from the start: clean structure, pages that match the services you actually sell, and a site that performs on a phone with two bars of signal.</p>
+              </div>
+              <dl class="panel-detail">
+                <div><dt>What breaks</dt><dd>One page trying to rank for six trades, no local signals, slow on mobile.</dd></div>
+                <div><dt>What we build</dt><dd>On-page SEO structure, a page per service, local relevance signals, metadata and indexing, performance essentials.</dd></div>
+                <div><dt>What changes</dt><dd>You show up for the job you want, in the area you cover.</dd></div>
+              </dl>
+            </article>
+
+            <article id="stage-panel-convinced" class="panel" role="tabpanel" tabindex="0" aria-labelledby="stage-tab-convinced" hidden>
+              <div class="panel-lede">
+                <p class="label">Stage 02 — Convinced</p>
+                <h3>Give people a reason to choose you.</h3>
+                <p>We shape your offer, your proof, and your next step into a site that makes sense before anyone ever picks up the phone. Every page has one job.</p>
+              </div>
+              <dl class="panel-detail">
+                <div><dt>What breaks</dt><dd>Stock photos, vague copy, and no answer to "why you".</dd></div>
+                <div><dt>What we build</dt><dd>Page strategy and structure, a custom visual direction, mobile-first build, licensing and credentials placed where they carry weight.</dd></div>
+                <div><dt>What changes</dt><dd>The right customer stops comparing and starts contacting.</dd></div>
+              </dl>
+            </article>
+
+            <article id="stage-panel-asked" class="panel" role="tabpanel" tabindex="0" aria-labelledby="stage-tab-asked" hidden>
+              <div class="panel-lede">
+                <p class="label">Stage 03 — Asked</p>
+                <h3>Make reaching out the obvious move.</h3>
+                <p>We remove the friction between interest and contact, so a good lead never stalls on a twelve-field form or a phone number buried in a footer.</p>
+              </div>
+              <dl class="panel-detail">
+                <div><dt>What breaks</dt><dd>A contact page that asks for everything and explains nothing.</dd></div>
+                <div><dt>What we build</dt><dd>Quote and booking paths, contact form design, emergency and after-hours routes, a confirmation experience that reassures.</dd></div>
+                <div><dt>What changes</dt><dd>Asking takes seconds, and people can tell what happens next.</dd></div>
+              </dl>
+            </article>
+
+            <article id="stage-panel-answered" class="panel" role="tabpanel" tabindex="0" aria-labelledby="stage-tab-answered" hidden>
+              <div class="panel-lede">
+                <p class="label">Stage 04 — Answered</p>
+                <h3>Nothing lands in an inbox nobody opens.</h3>
+                <p>An inquiry is only worth what happens after it arrives. We route it to where you'll actually see it and make sure the customer hears back.</p>
+              </div>
+              <dl class="panel-detail">
+                <div><dt>What breaks</dt><dd>Form mail to an address the owner stopped checking two years ago.</dd></div>
+                <div><dt>What we build</dt><dd>Lead-routing logic, notifications that reach a phone, automatic confirmations, follow-up and review requests.</dd></div>
+                <div><dt>What changes</dt><dd>Every inquiry lands somewhere a person will see it.</dd></div>
+              </dl>
+            </article>
+
+            <article id="stage-panel-kept" class="panel" role="tabpanel" tabindex="0" aria-labelledby="stage-tab-kept" hidden>
+              <div class="panel-lede">
+                <p class="label">Stage 05 — Kept</p>
+                <h3>Keep it useful when the business changes.</h3>
+                <p>Your website isn't abandoned at launch. Prices move, crews grow, a service gets added. We handle the updates so the site stays true.</p>
+              </div>
+              <dl class="panel-detail">
+                <div><dt>What breaks</dt><dd>A site that was accurate the week it launched and wrong ever since.</dd></div>
+                <div><dt>What we build</dt><dd>Managed updates, a private space for change requests, practical integrations, hosting and domain coordination.</dd></div>
+                <div><dt>What changes</dt><dd>The website keeps earning after the invoice is paid.</dd></div>
+              </dl>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Process ──────────────────────────────────────────── -->
+    <section id="process" class="process" aria-labelledby="process-title">
+      <div class="grid">
+        <header class="section-head">
+          <p class="label">02 — How it works</p>
+          <h2 id="process-title" class="display-sm">You see the site before you buy it.</h2>
+          <p class="section-aside" data-reveal>
+            Five steps, no surprises. <mark class="hl">The preview is free</mark> and there is no pressure to go live.
+          </p>
+        </header>
+      </div>
+
+      <div class="grid">
+        <ol class="steps">
+          <li class="step">
+            <span class="idx">01</span>
+            <h3>Free website review</h3>
+            <p>We look at your current site and online presence, then tell you plainly where it's losing work.</p>
+          </li>
+          <li class="step">
+            <span class="idx">02</span>
+            <h3>Plan</h3>
+            <p>We learn the business — services, customers, the jobs worth winning, the ones worth turning down.</p>
+          </li>
+          <li class="step">
+            <span class="idx">03</span>
+            <h3>Build</h3>
+            <p>We design and build around your business and brand, not a template with your logo dropped in.</p>
+          </li>
+          <li class="step step-flag">
+            <span class="idx">04</span>
+            <h3>Free preview</h3>
+            <p>You see the finished website at no cost, before deciding to go live. If it isn't right, you walk.</p>
+          </li>
+          <li class="step">
+            <span class="idx">05</span>
+            <h3>Launch &amp; manage</h3>
+            <p>We connect the domain, launch it, and keep it running month after month.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ── Work ─────────────────────────────────────────────── -->
+    <section id="work" class="work" aria-labelledby="work-title">
+      <div class="grid">
+        <header class="section-head">
+          <p class="label">03 — Selected work</p>
+          <h2 id="work-title" class="display-sm">Concepts, labelled honestly.</h2>
+          <p class="section-aside" data-reveal>
+            Demonstration builds, <mark class="hl">not invented case studies</mark>. No borrowed logos and no
+            numbers we can't stand behind. Each one starts from a real customer action.
+          </p>
+        </header>
+      </div>
+
+      <div class="grid">
+        <div class="work-list">
+          <article class="work-item">
+            <p class="label">Concept · HVAC</p>
+            <h3>Desert Air Co.</h3>
+            <p class="work-copy">
+              Built around the two things an HVAC customer actually does: call at 2am
+              with no cold air, or book a tune-up before summer. The emergency route
+              never sits more than one tap away.
+            </p>
+            <ul class="work-tags">
+              <li>Emergency route</li>
+              <li>Maintenance booking</li>
+              <li>Form to the shop</li>
+            </ul>
+          </article>
+
+          <article class="work-item">
+            <p class="label">Concept · Plumbing</p>
+            <h3>Red Rock Plumbing</h3>
+            <p class="work-copy">
+              One job: get someone from "pipe burst" to a ringing phone without
+              reading anything. Everything else on the site defers to that.
+            </p>
+            <ul class="work-tags">
+              <li>Same-day path</li>
+              <li>Service area clarity</li>
+              <li>One-tap call</li>
+            </ul>
+          </article>
+
+          <article class="work-item">
+            <p class="label">Concept · Electrical</p>
+            <h3>Valley Electric</h3>
+            <p class="work-copy">
+              Licensing and insurance lead, because that's what a homeowner checks
+              before letting anyone near a panel. Estimates are requested in three fields.
+            </p>
+            <ul class="work-tags">
+              <li>Credentials first</li>
+              <li>Panel &amp; lighting work</li>
+              <li>Short estimate form</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="industries">
+          <p class="label">Who this is for</p>
+          <ul class="industry-list">
+            <li>HVAC</li>
+            <li>Plumbing</li>
+            <li>Electrical</li>
+            <li>Roofing</li>
+            <li>Landscaping</li>
+            <li>General contracting</li>
+            <li>Cleaning</li>
+            <li>Auto detailing</li>
+            <li>Painting</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Pricing ──────────────────────────────────────────── -->
+    <section id="pricing" class="pricing" aria-labelledby="pricing-title">
+      <div class="grid">
+        <header class="section-head">
+          <p class="label">04 — Engagement</p>
+          <h2 id="pricing-title" class="display-sm">Clear starting prices. No checkout button.</h2>
+          <p class="section-aside" data-reveal>
+            <mark class="hl">Nothing is billed until we agree on scope</mark>. These are starting points, not
+            a menu — the free review is what turns them into a real number.
+          </p>
+        </header>
+      </div>
+
+      <div class="grid">
+        <div class="plans">
+          <div class="plan-head">
+            <span>Engagement</span>
+            <span>Setup</span>
+            <span>Management</span>
+            <span>Best when</span>
+            <span><span class="sr-only">Action</span></span>
+          </div>
+
+          <div class="plan">
+            <span class="plan-name"><span class="idx">01</span>Starter</span>
+            <span class="plan-price">$800</span>
+            <span class="plan-monthly">$75<small>/mo</small></span>
+            <span class="plan-when">You need a professional site that works and stays current.</span>
+            <span class="plan-act"><a href="#review">Start here</a></span>
+          </div>
+
+          <div class="plan plan-featured">
+            <span class="plan-name"><span class="idx">02</span>Growth <em class="plan-flag">Most common</em></span>
+            <span class="plan-price">$1,200</span>
+            <span class="plan-monthly">$150<small>/mo</small></span>
+            <span class="plan-when">More pages, more services, more of the inquiry path to build.</span>
+            <span class="plan-act"><a href="#review">Talk it through</a></span>
+          </div>
+
+          <div class="plan">
+            <span class="plan-name"><span class="idx">03</span>Pro</span>
+            <span class="plan-price">$2,000</span>
+            <span class="plan-monthly">$300+<small>/mo</small></span>
+            <span class="plan-when">Advanced website, SEO, or lead follow-up needs. Quoted around the work.</span>
+            <span class="plan-act"><a href="#review">Ask about Pro</a></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="budget">
+          <div class="budget-copy">
+            <p class="label">Custom system</p>
+            <h3>Have a number in mind?</h3>
+            <p>
+              Set what you're willing to invest. After the free review we'll tell you
+              exactly what we can build for it — and say so if the answer is "not enough yet".
+            </p>
+          </div>
+
+          <div class="budget-control">
+            <div class="budget-field">
+              <label for="budget-input">Budget in US dollars</label>
+              <div class="budget-input-wrap">
+                <span aria-hidden="true">$</span>
+                <input id="budget-input" name="budget" type="text" inputmode="numeric" autocomplete="off" value="5,000">
+              </div>
+            </div>
+
+            <label class="sr-only" for="budget-range">Budget slider</label>
+            <input id="budget-range" type="range" min="800" max="20000" step="100" value="5000">
+            <div class="budget-scale" aria-hidden="true"><span>$800</span><span>$20,000</span></div>
+
+            <p id="budget-hint" class="budget-hint" role="status"></p>
+            <a id="budget-cta" class="btn btn-accent" href="#review">Plan my custom system</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Care / ongoing management ────────────────────────── -->
+    <section id="care" class="care" aria-labelledby="care-title">
+      <div class="grid">
+        <header class="section-head">
+          <p class="label">05 — After launch</p>
+          <h2 id="care-title" class="display-sm">Launch is the start of the job, not the end of it.</h2>
+          <p class="section-aside" data-reveal>
+            <mark class="hl">Most websites decay quietly</mark>. Monthly management is how this one doesn't.
+          </p>
+        </header>
+      </div>
+
+      <div class="grid">
+        <div class="care-grid">
+          <article class="care-item">
+            <h3>Updates, handled</h3>
+            <p>New service, new price, new crew member, seasonal hours. You send it, we change it — no dashboard to learn.</p>
+          </article>
+          <article class="care-item">
+            <h3>A place to ask</h3>
+            <p>One private space for requests, so changes don't live in a text thread that scrolls away.</p>
+          </article>
+          <article class="care-item">
+            <h3>Kept running</h3>
+            <p>Hosting coordination, domain renewals, security patches, and the boring maintenance that breaks sites when skipped.</p>
+          </article>
+          <article class="care-item">
+            <h3>Watched, not ignored</h3>
+            <p>We keep an eye on whether the forms still work and the pages still load. You find out from us, not a customer.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FAQ ──────────────────────────────────────────────── -->
+    <section id="faq" class="faq" aria-labelledby="faq-title">
+      <div class="grid">
+        <header class="section-head">
+          <p class="label">06 — Questions</p>
+          <h2 id="faq-title" class="display-sm">Straight answers.</h2>
+          <p class="section-aside" data-reveal>
+            Still have one? <a class="inline-link" href="mailto:hello.wavenly@gmail.com">Send a note</a>
+            and you'll get a real reply.
+          </p>
+        </header>
+      </div>
+
+      <div class="grid">
+        <div class="faq-list">
+          <details name="faq">
+            <summary><span class="idx">01</span>How much does a website cost?</summary>
+            <div class="faq-body"><p>Starter is $800 setup plus $75/month management. Growth is $1,200 plus $150/month. Pro is $2,000 plus $300+/month. Anything outside those is quoted after the free review.</p></div>
+          </details>
+          <details name="faq">
+            <summary><span class="idx">02</span>Can I see it before I pay?</summary>
+            <div class="faq-body"><p>Yes. When the website is ready you preview the finished thing at no cost. There is no pressure to buy it or launch it.</p></div>
+          </details>
+          <details name="faq">
+            <summary><span class="idx">03</span>Do I need an existing website?</summary>
+            <div class="faq-body"><p>No. We build from scratch, or redesign what you already have if it's worth keeping.</p></div>
+          </details>
+          <details name="faq">
+            <summary><span class="idx">04</span>What does monthly management actually include?</summary>
+            <div class="faq-body"><p>Hosting coordination, updates, maintenance, change requests, and a private client space to keep the work moving. It's the difference between a site that ages well and one that quietly stops being true.</p></div>
+          </details>
+          <details name="faq">
+            <summary><span class="idx">05</span>How long does it take?</summary>
+            <div class="faq-body"><p>It depends on scope and how quickly content arrives. We set clear expectations before starting, and we'd rather give you a real date than a fast one.</p></div>
+          </details>
+          <details name="faq">
+            <summary><span class="idx">06</span>Do you only work with Las Vegas businesses?</summary>
+            <div class="faq-body"><p>Wavenly is based in Las Vegas and works with service businesses locally and well beyond it.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Review / contact ─────────────────────────────────── -->
+    <section id="review" class="closer" aria-labelledby="closer-title">
+      <div class="grid closer-grid">
+        <div class="closer-main">
+          <p class="label">07 — Start here</p>
+          <h2 id="closer-title" class="sr-only">Start a free website review</h2>
+
+          <button class="closer-cta" type="button" data-open-signup
+                  aria-haspopup="dialog" aria-label="Start your free website review">
+            <span class="closer-line">Let's build you</span>
+            <span class="closer-line">
+              <span>a site that</span>
+              <span class="closer-rotate" data-words="answers|converts|earns|books jobs|never leaks"><span class="closer-word">answers</span></span>
+              <span class="closer-arrow" aria-hidden="true">→</span>
+            </span>
+          </button>
+
+          <div class="closer-meta">
+            <a href="mailto:hello.wavenly@gmail.com">hello.wavenly@gmail.com</a>
+            <span>Las Vegas, Nevada</span>
+            <span>Free review — no obligation</span>
+          </div>
+        </div>
+
+        <!-- Rendered inline by default so it works without scripting; the
+             script relocates it into the dialog below. -->
+        <div class="closer-form" data-signup-host>
+          <p class="closer-form-lede">
+            Tell us the business, where you work, and your current URL if you have one.
+            We'll come back with what we'd build and what it would cost — no obligation.
+          </p>
+          <form id="review-form" class="review-form" novalidate>
+          <div class="field">
+            <label for="field-name">Your name</label>
+            <input id="field-name" name="name" type="text" autocomplete="name" required aria-describedby="err-name">
+            <p class="field-error" id="err-name" hidden></p>
+          </div>
+
+          <div class="field">
+            <label for="field-email">Business email</label>
+            <input id="field-email" name="email" type="email" autocomplete="email" required aria-describedby="err-email">
+            <p class="field-error" id="err-email" hidden></p>
+          </div>
+
+          <div class="field">
+            <label for="field-trade">What kind of work do you do?</label>
+            <select id="field-trade" name="trade">
+              <option value="">Select a trade</option>
+              <option>HVAC</option>
+              <option>Plumbing</option>
+              <option>Electrical</option>
+              <option>Roofing</option>
+              <option>Landscaping</option>
+              <option>General contracting</option>
+              <option>Cleaning</option>
+              <option>Auto detailing</option>
+              <option>Painting</option>
+              <option>Something else</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="field-details">Business name &amp; current website</label>
+            <textarea id="field-details" name="details" rows="3" required aria-describedby="err-details hint-details"></textarea>
+            <p class="field-hint" id="hint-details">If you don't have a site yet, just say so.</p>
+            <p class="field-error" id="err-details" hidden></p>
+          </div>
+
+            <!-- Honeypot. Real people never see this; bots fill every field. -->
+            <div class="hp" aria-hidden="true">
+              <label for="field-company">Company (leave blank)</label>
+              <input id="field-company" name="company" type="text" tabindex="-1" autocomplete="off">
+            </div>
+
+          <button class="btn btn-accent btn-block" type="submit">Request my free review</button>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <dialog class="signup" id="signup" aria-labelledby="signup-title">
+      <div class="signup-inner">
+        <button class="signup-close" type="button" data-close-signup aria-label="Close">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M4 4l16 16M20 4L4 20"/>
+          </svg>
+        </button>
+        <p class="label">Free website review</p>
+        <h2 id="signup-title">Tell us about the business.</h2>
+        <p class="signup-lede">
+          Three fields. We'll come back with what we'd build and what it would
+          cost — no obligation, and no sales call you have to sit through.
+        </p>
+        <div data-signup-slot></div>
+      </div>
+    </dialog>
+  </main>
+
+  <!-- ── Footer ─────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="grid footer-top">
+      <div class="footer-brand">
+        <a class="wordmark" href="#top">
+          <img class="wordmark-mark" src="public/images/wavenly-mark.png"
+               alt="" width="284" height="128" decoding="async">
+          <span class="wordmark-text">Wavenly</span>
+        </a>
+        <p class="footer-line">
+          Websites for service businesses — built, launched, and managed so you
+          can stay on the job.
+        </p>
+        <a class="btn btn-accent" href="#review">Get your free website review</a>
+      </div>
+
+      <nav class="footer-col" aria-label="Sections">
+        <h2 class="label">Sections</h2>
+        <a href="#path">The inquiry path</a>
+        <a href="#process">Process</a>
+        <a href="#work">Work</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#care">Care</a>
+        <a href="#faq">Questions</a>
+      </nav>
+
+      <div class="footer-col">
+        <h2 class="label">Contact</h2>
+        <a href="mailto:hello.wavenly@gmail.com">hello.wavenly@gmail.com</a>
+        <p>Las Vegas, Nevada</p>
+        <p>Mon–Fri, and most Saturdays</p>
+      </div>
+    </div>
+
+    <div class="grid footer-bottom">
+      <p>© <span id="year">2026</span> Wavenly</p>
+      <p>No public checkout — every engagement starts with a free review.</p>
+    </div>
+  </footer>
+
+  <script src="text-loop.js?v=3"></script>
+  <script src="script.js?v=10"></script>
+</body>
+</html>
