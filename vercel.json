@@ -1,5 +1,15 @@
 {
   "outputDirectory": ".",
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        { "type": "host", "value": "www.wavenly.co" }
+      ],
+      "destination": "https://wavenly.co/$1",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     { "source": "/studio", "destination": "/studio.html" }
   ],
