@@ -269,6 +269,19 @@
         const out = await res.json().catch(() => ({}));
 
         if (res.ok && out.ok) {
+          // Record a conversion only after the server has accepted the inquiry.
+          // The pixel's anonymous visitor ID already links this event to the page view;
+          // keep the inquiry's personal details in the email workflow, not analytics.
+          const isLikelyHuman = !form.elements.company?.value && Date.now() - openedAt >= 2000;
+          if (isLikelyHuman) {
+            try {
+              if (window.whop && typeof window.whop.track === 'function') {
+                window.whop.track('lead');
+              }
+            } catch {
+              // Analytics must never prevent a successful inquiry from completing.
+            }
+          }
           status.textContent = 'Thanks. We have your details and will come back with your review shortly.';
           status.setAttribute('data-state', 'ok');
           form.reset();
