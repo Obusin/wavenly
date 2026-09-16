@@ -4,9 +4,9 @@
     {
       "source": "/(.*)",
       "has": [
-        { "type": "host", "value": "www.wavenly.co" }
+        { "type": "host", "value": "wavenly.co" }
       ],
-      "destination": "https://wavenly.co/$1",
+      "destination": "https://www.wavenly.co/$1",
       "permanent": true
     }
   ],
