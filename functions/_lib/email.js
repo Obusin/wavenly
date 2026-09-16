@@ -15,7 +15,7 @@ export const settings = (env = {}) => ({
      delivers to the Resend account owner, so set RESEND_FROM in production. */
   from: env.RESEND_FROM || 'Wavenly <onboarding@resend.dev>',
   inbox: env.WAVENLY_INBOX || 'hello.wavenly@gmail.com',
-  site: (env.SITE_URL || 'https://wavenly.pages.dev').replace(/\/$/, ''),
+  site: (env.SITE_URL || (env.VERCEL_URL ? `https://${env.VERCEL_URL}` : 'https://wavenly.pages.dev')).replace(/\/$/, ''),
 });
 
 export const send = async (env, { to, subject, html, replyTo, bcc }) => {
